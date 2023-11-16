@@ -52,10 +52,6 @@ namespace TableRedactor
             try
             {
                DataTable dt = tableCollection[toolStripComboBox1.SelectedItem.ToString()];
-                //dt.Columns.Add("Выбранные для оплаты товары");
-                //DataGridViewCheckBoxColumn col1 = new DataGridViewCheckBoxColumn();
-                //col1.DataPropertyName = "Выбранные для оплаты товары";
-                //dataGridView1.Columns.Add(col1);
                 dataGridView1.DataSource = dt;
             }
             catch (Exception ex)
@@ -68,7 +64,7 @@ namespace TableRedactor
         {
             try
             {
-                int cellPrice = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["Цена за единицу товара"].Value.ToString());
+                int cellPrice = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["Общая сумма"].Value.ToString());
 
                 int result = Convert.ToInt32(SumTextBox.Text) + cellPrice;
 
